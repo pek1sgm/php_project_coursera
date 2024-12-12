@@ -15,6 +15,14 @@ class Car {
     }
 }
 
+class City {
+    public function __construct() {
+        echo "City created.";
+    }
+
+} 
+
+
 $myCar = new Car("red", "Volvo");
 echo $myCar->message();
 //var_dump($myCar);

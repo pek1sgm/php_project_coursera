@@ -24,13 +24,17 @@ Follow these steps to set up the environment using `docker-compose`:
 
 2. Ensure your project folder structure is correct:
    ```
-   project-folder/
+project-folder/
    ├── docker-compose.yml
    ├── Dockerfile
    ├── db-init/
    │   └── init-database.sql
-   └── html/
-       └── (PHP files, e.g., index.php)
+   ├── html/
+   │   └── (Frontend files, e.g., index.html, styles.css, scripts.js)
+   ├── backend/
+   │   ├── DatabaseHandler.php
+   │   └── (Weitere PHP-Dateien für das Backend)
+   └── README.md
    ```
 
 3. Start the environment:

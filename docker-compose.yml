@@ -11,7 +11,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - C:\\code\\php_project_coursera\\html:/var/www/html
+      - /Users/andreaspetker/Projekte/php_project_coursera/html:/var/www/html
+      - /Users/andreaspetker/Projekte/php_project_coursera/backend:/var/www/backend
     depends_on:
       - mysql
 
@@ -22,7 +23,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
       - mysql_data:/var/lib/mysql
-      - C:\\code\\php_project_coursera\\db-init:/docker-entrypoint-initdb.d
+      - /Users/andreaspetker/Projekte/php_project_coursera/db-init:/docker-entrypoint-initdb.d
     networks:
       - php-mysql-network
 
