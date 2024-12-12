@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_container
+    networks:
+      - php-mysql-network
+    ports:
+      - "8080:80"
+    volumes:
+      - C:\\code\\php_project_coursera\\html:/var/www/html
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - C:\\code\\php_project_coursera\\db-init:/docker-entrypoint-initdb.d
+    networks:
+      - php-mysql-network
+
+networks:
+  php-mysql-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
