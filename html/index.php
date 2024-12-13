@@ -5,7 +5,7 @@
 $servername = "mysql_container";
 $username = "root";
 $password = "";
-$dbname = "test";
+$dbname = "sdm_db"; // Datenbankname -> ./db-init/init-database.sql
 
 // Verbindung erstellen
 $conn = new mysqli($servername, $username, $password, $dbname);
